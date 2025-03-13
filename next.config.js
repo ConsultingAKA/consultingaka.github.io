@@ -4,7 +4,11 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: [],
+    unoptimized: true,
   },
+  output: 'export',
+  basePath: '',
+  assetPrefix: '',
 };
 
 module.exports = nextConfig;
