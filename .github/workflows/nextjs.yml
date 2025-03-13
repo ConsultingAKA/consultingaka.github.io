@@ -27,12 +27,12 @@ jobs:
           cache: npm
       - name: Setup Pages
         uses: actions/configure-pages@v3
-        with:
-          static_site_generator: next
       - name: Install dependencies
         run: npm ci
       - name: Build with Next.js
         run: npm run build
+      - name: Debug output directory
+        run: ls -la ./out
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
