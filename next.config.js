@@ -1,14 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
+  output: 'export',
   images: {
-    domains: [],
     unoptimized: true,
   },
-  output: 'export',
+  // If you're using a custom domain
   basePath: '',
-  assetPrefix: '',
+  // Disable trailing slashes
+  trailingSlash: false,
+  // Disable default React strict mode for compatibility
+  reactStrictMode: false,
 };
 
 module.exports = nextConfig;
