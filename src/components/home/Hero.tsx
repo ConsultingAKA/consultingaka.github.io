@@ -26,7 +26,7 @@ export default function Hero() {
   return (
     <section 
       ref={heroRef}
-      className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-gradient-to-b from-white to-secondary-50 dark:from-secondary-900 dark:to-secondary-950"
+      className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-background dark:from-secondary-900 dark:to-secondary-950"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
