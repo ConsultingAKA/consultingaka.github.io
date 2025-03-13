@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%; /* Very light gray with slight blue tint - similar to uxfol.io */
+    --background: 60 100% 97.5%; /* #fffef9 - warm off-white */
     --foreground: 220 20% 20%;
     --card: 0 0% 100%;
     --card-foreground: 220 20% 20%;
@@ -54,7 +54,7 @@
     @apply border-border border-solid;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background-static text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
   h1, h2, h3, h4, h5, h6 {

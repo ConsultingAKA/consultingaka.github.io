@@ -71,7 +71,7 @@ export default function Services() {
   return (
     <section 
       ref={ref}
-      className="py-24 bg-white dark:bg-secondary-950"
+      className="py-24 bg-background-static dark:bg-secondary-950"
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
