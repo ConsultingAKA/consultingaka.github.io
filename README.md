@@ -2,6 +2,8 @@
 
 This repository contains the source code for the AKA Consulting website, a professional consulting firm specializing in AI product management, software architecture for AI solutions, and market development.
 
+**NOTE: If you're seeing this README instead of the actual website, then the GitHub Pages deployment hasn't completed successfully. Please check the GitHub Actions workflow for any errors.**
+
 ## Features
 
 - Modern, responsive design built with Next.js and Tailwind CSS
