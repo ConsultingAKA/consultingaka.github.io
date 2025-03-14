@@ -1,13 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { Metadata } from 'next';
+
 import { motion } from 'framer-motion';
 
-export const metadata = {
-  title: 'Contact Us | AKA Consulting',
-  description: 'Get in touch with AKA Consulting for expert guidance on AI product management, software architecture, and market development.',
-};
+
 
 export default function ContactPage() {
   const [formState, setFormState] = useState({
