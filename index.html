@@ -6,350 +6,65 @@
     <title>AKA Consulting</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: #fffef9;
             color: #333;
             line-height: 1.6;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        header {
-            padding: 20px 0;
-            background-color: #fffef9;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-        }
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            background: linear-gradient(90deg, #3a56f0 0%, #8a28ee 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .hero {
-            padding-top: 120px;
-            padding-bottom: 80px;
-            text-align: center;
-        }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(90deg, #3a56f0 0%, #8a28ee 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
-        }
-        .subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: #555;
-        }
-        .cta-button {
-            display: inline-block;
-            background-color: #3a56f0;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        .cta-button:hover {
-            background-color: #2f44d1;
-        }
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        .feature-card {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-        }
-        .feature-icon {
-            background: #f0f4ff;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-        .feature-icon svg {
-            width: 30px;
-            height: 30px;
-            color: #3a56f0;
-        }
-        .feature-title {
-            font-size: 1.25rem;
-            font-weight: bold;
-            margin-bottom: 0.75rem;
-        }
-        .footer {
-            background-color: #f8f9fa;
-            padding: 2rem 0;
-            margin-top: 4rem;
-            text-align: center;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            background: linear-gradient(90deg, #3a56f0 0%, #8a28ee 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
-        }
-        .testimonials {
-            margin-top: 6rem;
-            text-align: center;
-        }
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        .testimonial-card {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            text-align: left;
-            position: relative;
-        }
-        .quote {
-            margin-bottom: 1.5rem;
-            font-style: italic;
-            color: #555;
-            line-height: 1.7;
-        }
-        .author {
-            display: flex;
-            align-items: center;
-        }
-        .author-info {
-            flex: 1;
-        }
-        .author-name {
-            font-weight: bold;
-            color: #333;
-        }
-        .author-role {
-            font-size: 0.9rem;
-            color: #666;
-        }
-        .cta-section {
-            margin-top: 6rem;
-            background: linear-gradient(90deg, #3a56f0 0%, #8a28ee 100%);
-            padding: 4rem 0;
-            border-radius: 10px;
-            color: white;
-            text-align: center;
-        }
-        .cta-content {
             max-width: 800px;
             margin: 0 auto;
+            padding: 20px;
         }
-        .cta-content h2 {
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h1 {
+            background: linear-gradient(90deg, #3a56f0 0%, #8a28ee 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             font-size: 2.5rem;
-            margin-bottom: 1rem;
         }
-        .cta-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-        .nav-links a {
-            color: #555;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-        }
-        .nav-links a:hover {
+        h2 {
             color: #3a56f0;
+            margin-top: 30px;
         }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: #3a56f0;
-            transform: scaleX(0);
-            transition: transform 0.3s;
-        }
-        .nav-links a:hover::after {
-            transform: scaleX(1);
-        }
-        .contact-button {
-            background-color: #3a56f0;
-            color: white !important;
-            padding: 8px 16px;
-            border-radius: 6px;
-            margin-left: 8px;
-        }
-        .contact-button:hover {
-            background-color: #2f44d1;
-        }
-        .contact-button::after {
-            display: none !important;
-        }
-        .mobile-menu-button {
-            display: none;
-            cursor: pointer;
-        }
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            .subtitle {
-                font-size: 1.2rem;
-            }
-            .nav-links {
-                display: none;
-            }
-            .mobile-menu-button {
-                display: block;
-            }
+        .feature {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="logo">AKA Consulting</div>
-            <nav class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">Services</a>
-                <a href="#">Use Cases</a>
-                <a href="#">Team</a>
-                <a href="#">About</a>
-                <a href="#" class="contact-button">Contact Us</a>
-            </nav>
-            <div class="mobile-menu-button">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <section class="hero">
-            <h1>Transform Your AI Vision Into Market Success</h1>
-            <p class="subtitle">Expert consulting in AI product management, software architecture, and market development.</p>
-            <a href="#" class="cta-button">Get Started</a>
-        </section>
-
-        <section class="features">
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                    </svg>
-                </div>
-                <h3 class="feature-title">AI Product Management</h3>
-                <p>Strategic guidance to define, develop, and deploy AI products that deliver real business value.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                    </svg>
-                </div>
-                <h3 class="feature-title">Software Architecture</h3>
-                <p>Expert design of scalable, maintainable systems optimized for AI workloads and business requirements.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                    </svg>
-                </div>
-                <h3 class="feature-title">Market Development</h3>
-                <p>Strategies to position your AI solution in the market and accelerate growth and adoption.</p>
-            </div>
-        </section>
-
-        <section class="testimonials">
-            <h2 class="section-title">What Our Clients Say</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="quote">"AKA Consulting transformed our approach to AI product management. Their strategic guidance helped us prioritize the right features and bring our product to market 30% faster than planned."</div>
-                    <div class="author">
-                        <div class="author-info">
-                            <div class="author-name">Sarah Johnson</div>
-                            <div class="author-role">CTO, HealthTech Innovations</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="quote">"The architecture recommendations provided by AKA Consulting allowed us to build a scalable foundation for our AI platform. We've seen a 40% improvement in system performance."</div>
-                    <div class="author">
-                        <div class="author-info">
-                            <div class="author-name">Michael Chen</div>
-                            <div class="author-role">VP of Engineering, FinTech Solutions</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="quote">"Working with AKA Consulting on our market development strategy was game-changing. Their insights helped us position our AI solution effectively, resulting in a 65% increase in qualified leads."</div>
-                    <div class="author">
-                        <div class="author-info">
-                            <div class="author-name">Jessica Williams</div>
-                            <div class="author-role">Director of Marketing, RetailAI</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-section">
-            <div class="cta-content">
-                <h2>Ready to Transform Your AI Initiatives?</h2>
-                <p>Let's discuss how we can help you achieve your business objectives.</p>
-                <a href="#" class="cta-button">Schedule a Consultation</a>
-            </div>
-        </section>
+    <div class="header">
+        <h1>AKA Consulting</h1>
+        <p>Expert consulting in AI product management, software architecture, and market development.</p>
     </div>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 AKA Consulting. All rights reserved.</p>
-        </div>
+    <h2>Our Services</h2>
+
+    <div class="feature">
+        <h3>AI Product Management</h3>
+        <p>Strategic guidance to define, develop, and deploy AI products that deliver real business value.</p>
+    </div>
+
+    <div class="feature">
+        <h3>Software Architecture</h3>
+        <p>Expert design of scalable, maintainable systems optimized for AI workloads and business requirements.</p>
+    </div>
+
+    <div class="feature">
+        <h3>Market Development</h3>
+        <p>Strategies to position your AI solution in the market and accelerate growth and adoption.</p>
+    </div>
+
+    <h2>Contact Us</h2>
+    <p>Email: info@akaconsulting.com</p>
+
+    <footer>
+        <p>© 2024 AKA Consulting. All rights reserved.</p>
     </footer>
 </body>
 </html>
