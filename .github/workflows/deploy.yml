@@ -10,12 +10,8 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -24,23 +20,35 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "16"
-          cache: 'npm'
       - name: Install dependencies
         run: npm ci
-      - name: Build with Next.js
+      - name: Build
         run: npm run build
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./out
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
+        run: |
+          # Create artifact directory
+          mkdir -p /tmp/artifact
+          # Copy built files to artifact directory
+          cp -r ./out/* /tmp/artifact/
+          # Upload artifact
+          echo "::group::Upload artifact"
+          cd /tmp/artifact
+          find . -type f -exec sha256sum {} \; > ../sha256sums.txt
+          cd ..
+          tar -czf artifact.tar.gz -C artifact .
+          echo "GITHUB_PAGES_ARTIFACT=artifact.tar.gz" >> $GITHUB_ENV
+          echo "::endgroup::"
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        run: |
+          echo "Deploying to GitHub Pages..."
+          # Deploy using gh pages API
+          echo "::group::Deploy Pages"
+          curl -X POST \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            -F "artifact=${{ env.GITHUB_PAGES_ARTIFACT }}" \
+            "https://api.github.com/repos/${{ github.repository }}/pages/deployments"
+          echo "::endgroup::"
