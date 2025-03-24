@@ -7,7 +7,7 @@ const nextConfig = {
   // If you're using a custom domain
   basePath: '',
   // Disable trailing slashes
-  trailingSlash: false,
+  trailingSlash: true,
   // Disable default React strict mode for compatibility
   reactStrictMode: false,
 };
