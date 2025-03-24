@@ -3,6 +3,7 @@ import { Inter, Raleway } from 'next/font/google';
 import type { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import ClientCssLoader from '@/components/ClientCssLoader';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${raleway.variable}`}>
       <body className="min-h-screen flex flex-col">
+        <ClientCssLoader />
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
