@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import ClientCssLoader from '@/components/ClientCssLoader';
+import InlineCss from '@/components/InlineCss';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -30,6 +31,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${raleway.variable}`}>
+      <head>
+        <InlineCss />
+      </head>
       <body className="min-h-screen flex flex-col">
         <ClientCssLoader />
         <Header />
