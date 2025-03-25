@@ -1,10 +1,9 @@
 import '@/styles/globals.css';
+import '@/styles/basic.css'; // Add this new import
 import { Inter, Raleway } from 'next/font/google';
 import type { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import ClientCssLoader from '@/components/ClientCssLoader';
-import InlineCss from '@/components/InlineCss';
 
 const inter = Inter({
   subsets: ['latin'],
