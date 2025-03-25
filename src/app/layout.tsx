@@ -34,7 +34,7 @@ export default function RootLayout({
         
       </head>
       <body className="min-h-screen flex flex-col">
-        <ClientCssLoader />
+        
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
