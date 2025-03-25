@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${raleway.variable}`}>
       <head>
-        <InlineCss />
+        
       </head>
       <body className="min-h-screen flex flex-col">
         <ClientCssLoader />
