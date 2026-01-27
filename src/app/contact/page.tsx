@@ -28,24 +28,48 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     setIsSubmitting(true);
     setSubmitError('');
-    
-    // In a real implementation, this would send data to a server
-    // For now, we'll simulate a successful submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      // Reset form after successful submission
-      setFormState({
-        name: '',
-        email: '',
-        company: '',
-        phone: '',
-        message: '',
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+          name: formState.name,
+          email: formState.email,
+          company: formState.company,
+          phone: formState.phone,
+          message: formState.message,
+          subject: `New Contact Form Submission from ${formState.name}`,
+        }),
       });
-    }, 1500);
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSubmitting(false);
+        setSubmitSuccess(true);
+        // Reset form after successful submission
+        setFormState({
+          name: '',
+          email: '',
+          company: '',
+          phone: '',
+          message: '',
+        });
+      } else {
+        setIsSubmitting(false);
+        setSubmitError('Something went wrong. Please try again or email us directly.');
+      }
+    } catch (error) {
+      setIsSubmitting(false);
+      setSubmitError('Failed to send message. Please try again or email us directly.');
+    }
   };
 
   return (
