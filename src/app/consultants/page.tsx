@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -9,23 +10,23 @@ export const metadata: Metadata = {
 const consultants = [
   {
     id: 'alex-martinez',
-    name: 'Alex Martinez',
+    name: 'Kenneth Cather',
     role: 'Principal Consultant, AI Product Strategy',
-    bio: 'Alex brings over 15 years of experience in product management and strategy for AI-driven solutions. Previously, they led product teams at major tech companies, bringing multiple AI products from concept to market success.',
-    expertise: ['AI Product Strategy', 'Go-To-Market Planning', 'Product Management', 'Technical Roadmapping'],
-    education: 'MBA, Stanford University | MS in Computer Science, MIT',
-    image: '/images/alex-martinez.jpg', // Replace with actual image when available
+    bio: 'Kenneth brings over 15 years of experience in product management and strategy with the past decade focused on AI-driven solutions. Previously, he led product teams at major tech companies, bringing multiple AI products from concept to market success. He also lead the creation of the first no-code AI solution with UIPath Studio. Kennneth has also lead product strategy for two companies that have gone from Series A to IPO.',
+    expertise: ['AI Product Strategy', 'Go-To-Market Planning', 'Product Management', 'Technical Roadmapping', 'No-Code Solutions', 'AI Software Architecture'],
+    education: 'BS in Electrical Engineering, University of Cincinnati',
+    image: '/images/kenneth-cather.jpg', // Replace with actual image when available
   },
   {
     id: 'kai-johnson',
-    name: 'Kai Johnson',
-    role: 'Senior Consultant, Software Architecture',
-    bio: 'Kai is an experienced software architect with deep expertise in designing scalable systems for AI workloads. They have led architecture for multiple Fortune 500 companies and startups, with a focus on ML-powered applications.',
-    expertise: ['System Architecture', 'ML Infrastructure', 'Distributed Systems', 'Cloud Native Design'],
-    education: 'PhD in Computer Science, UC Berkeley | BS in Computer Engineering, Georgia Tech',
-    image: '/images/kai-johnson.jpg', // Replace with actual image when available
+    name: 'Mari Garcia',
+    role: 'Senior Consultant, Product Designer',
+    bio: 'Mari is an experienced product designer with deep expertise in designing products for AI workloads. She has led design for multiple Fortune 500 companies and startups, with a focus on intuitive UI for quick adoption.',
+    expertise: ['User Research', 'User Experience', 'Design Thinking', 'User Interface'],
+    education: 'MA in Management and Leadership, CUNY | BA in International Business, CUNY',
+    image: '/images/mari-garcia.jpg', // Replace with actual image when available
   },
-  {
+ /* {
     id: 'sarah-patel',
     name: 'Sarah Patel',
     role: 'Principal Consultant, Market Development',
@@ -42,7 +43,7 @@ const consultants = [
     expertise: ['AI Implementation', 'ML Ops', 'Model Governance', 'Performance Optimization'],
     education: 'MS in Machine Learning, Carnegie Mellon | BS in Statistics, UCLA',
     image: '/images/michael-wong.jpg', // Replace with actual image when available
-  },
+  },*/
 ];
 
 export default function ConsultantsPage() {
@@ -72,11 +73,14 @@ export default function ConsultantsPage() {
                 <div key={consultant.id} id={consultant.id} className="scroll-mt-24">
                   <div className="flex flex-col md:flex-row gap-8">
                     <div className="md:w-1/3">
-                      {/* Image placeholder - replace with actual image component when available */}
-                      <div className="aspect-square rounded-xl bg-secondary-200 dark:bg-secondary-800 flex items-center justify-center overflow-hidden">
-                        <svg className="h-16 w-16 text-secondary-400 dark:text-secondary-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                        </svg>
+                      <div className="aspect-square rounded-xl bg-secondary-200 dark:bg-secondary-800 overflow-hidden">
+                        <Image
+                          src={consultant.image}
+                          alt={consultant.name}
+                          width={400}
+                          height={400}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                     </div>
                     

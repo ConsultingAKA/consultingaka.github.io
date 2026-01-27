@@ -10,19 +10,19 @@
     --card-foreground: 220 20% 20%;
     --popover: 0 0% 100%;
     --popover-foreground: 220 20% 20%;
-    --primary: 223 88% 55%; /* More blue-focused primary color */
+    --primary: 142 42% 31%; /* Green primary color */
     --primary-foreground: 210 40% 98%;
     --secondary: 210 20% 96%;
     --secondary-foreground: 220 20% 20%;
     --muted: 210 20% 96%;
     --muted-foreground: 220 10% 40%;
-    --accent: 263 80% 58%; /* Purple accent */
+    --accent: 142 22% 19%; /* Dark green accent */
     --accent-foreground: 210 40% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 20% 90%;
     --input: 214.3 20% 90%;
-    --ring: 223 88% 55%;
+    --ring: 142 42% 31%;
     --radius: 0.5rem;
   }
 
@@ -33,19 +33,19 @@
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 199 79% 38%;
+    --primary: 142 42% 31%;
     --primary-foreground: 222.2 47.4% 11.2%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 254 85% 44%;
+    --accent: 142 22% 19%;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 199 79% 38%;
+    --ring: 142 42% 31%;
   }
 }
 
@@ -70,7 +70,7 @@
     @apply animate-fade-up;
   }
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-accent-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-accent-700;
   }
 }
 
