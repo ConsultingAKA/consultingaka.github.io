@@ -47,11 +47,11 @@ export default function Footer() {
             <ul className="space-y-2">
               <li className="text-secondary-600 dark:text-secondary-400">
                 <span className="font-medium text-secondary-800 dark:text-secondary-200">Email:</span>{' '}
-                <a 
-                  href="mailto:info@akaconsulting.com" 
+                <a
+                  href="mailto:kenneth@consulting-aka.com"
                   className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
                 >
-                  info@akaconsulting.com
+                  kenneth@consulting-aka.com
                 </a>
               </li>
               <li>
